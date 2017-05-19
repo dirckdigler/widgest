@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The File JQuey -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- The Files about Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- The Files about Jquery UI -->
+    <script src="jquery-ui/jquery-ui.js"></script>
+    <link type="text/css" href="jquery-ui/jquery-ui.css" rel="Stylesheet" />
+    <!-- File content all data format JSON-->
+    <script type="text/javascript" src="data.json"></script>
+    <!-- styles custom for all widgest -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- styles for upload files -->
+    <link rel="stylesheet" href="css/upload/jquery.fileupload.css">
+    <link rel="stylesheet" href="css/upload/style.css">
+    <!-- styles for share content social media -->
+    <link href="css/share/demo.css" rel="stylesheet">
+    <link href="css/share/jquery.share.css" rel="stylesheet">
+    <title>Prodigious test</title>
+    <script type="text/javascript">
+    </script>
+  </head>
+  <body>
+
+   <!-- Off Canvas Navigation
+    ================================================== -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="img-1 navbar-brand" href="#">WIDGET 1</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li >
+              <a href="#widget-2" class="img-2 page-scroll">WIDGET 2</a>
+              </li>
+            <li>
+              <a href="#widget-3" class="img-3 page-scroll">WIDGET 3</a>
+              </li>
+            <li>
+              <a href="#widget-4" class="img-4 page-scroll">WIDGET 4</a>
+            </li>
+          </ul>
+          
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="lang" key="language" dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Language <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="translate" id="es"><a href="#">Español</a></li>
+                <li class="translate" id="en"><a href="#">Ingles</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav><!--- End Off Canvas Side Menu -->
+
+    <!-- widget 2 Section -->
+    <div id="widget-2">
+      <div id="tabs">
+        <ul>
+          <li><a class="lang" key="diagram stats" href="#tabs-1">Diagram Stats</a></li>
+          <li><a class="lang" key="month reports" href="#tabs-2">Month Reports</a></li>
+        </ul>
+        <div id="tabs-1">
+          <div class="chart-main">
+            <div id="chart-container"></div>
+            <div class="info-files">
+              <p class="lang" key="2.435 files">2.435 files</p>
+              <span>47 Gb</span>
+            </div>
+          </div>   
+          <div class="footer-chart">
+            <div class="features">
+              <ul>
+                <li class="audio"><p>audio</p></li>
+                <li class="video"><p>video</p></li>
+                <li class="photo lang" key="photo"><p>photo</p></li>
+              </ul>
+            </div> 
+            <div class="features-widget"> 
+              <ul>
+                <li>
+                  <a  href="#" data-toggle="modal" data-target="#myModal">
+                    <span class="lang upload" key="upload files">UPLOAD FILES</span>
+                  </a>
+                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <h4 class="modal-title text-center">Prodigious</h4>
+                        </div>
+                        <div class="modal-body">
+                           <!-- The fileinput-button span is used to style the file input field as button -->
+                            <span class="btn btn-success fileinput-button">
+                              <i class="glyphicon glyphicon-plus"></i>
+                              <span>add file</span>
+                              <!-- The file input field used as target for the file upload widget -->
+                              <input id="fileupload" type="file" name="files[]" multiple>
+                            </span>
+                            <br>
+                            <br>
+                            <!-- The global progress bar -->
+                            <div id="progress" class="progress">
+                              <div class="progress-bar progress-bar-success"></div>
+                            </div>
+                            <!-- The container for the uploaded files -->
+                            <div id="files" class="files"></div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Save changes</button>
+                        </div>
+                      </div> <!-- /.modal-content -->
+                    </div> <!-- /.modal-dialog -->
+                  </div> <!-- /.modal -->
+                </li>    
+                <li>
+                  <a href="javascript:void(0);" class="share" title="Share This">
+                    <span class="lang share-img" key="share links">SHARE LINK</span>
+                  </a>
+                  <div id="boxa"></div>
+                  <div id="boxb"></div>
+                </li>
+                <li>
+                  <a href="files.zip">
+                    <span class="lang backup" key="back up">BACK UP</span>
+                  </a>
+                </li>
+              </ul>
+            </div>  
+          </div>
+        </div>
+        <div id="tabs-2">
+          <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+        </div>
+      </div>
+    </div>  
+  
+    <!-- widget 3 Section -->
+    <div id="widget-3">
+      <div id="chartContainer" style="width:100%; height:300px;"></div>
+      <div class="max-range">
+        <div class="max-point"></div>
+        <span>+2.18(3.71%)</span>
+      </div>  
+      <div class="data-container">
+        <div class="info"><span class="lang" key="today">Today</span><span class="info-hr"></span></div>
+        <span class="name">Salt Lake City, Utah</span>
+        <div class="box">
+          <div class="box1">
+            <span class="numbers">13.5 M</span>
+            <span class="lang traded" key="shares traded">Shares Traded</span>
+          </div>
+          <div class="box2">
+            <span class="numbers">28.44 B</span>
+            <span class="lang traded" key="market cap">Market Cap</span>
+          </div>
+        </div>  
+        <div class="foot-1">
+          <span class="img-AAPL"></span>
+        </div>
+        <div class="foot-2">
+          <span class="lang traded" key="yearly charge">Yearly Charge</span>
+          <span class="numbers">+127.01</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- widget 4 Section -->
+    <div id="widget-4">
+      <div class="img-profile"></div>
+      <div class="container-profile">
+        <div class="wrap-avatar">
+          <div class="avatar"></div>
+        </div>
+        <span>John Raymons</span>
+        <p class="lang" key="your talent amazes! This is awsome">Your talent amazes! This is awsome.</p>
+        <p class="lang" key="exited to see the final product">Exited to see the final product.</p>
+        <div class="footer">
+          <ul>
+            <li><a href="#" class="watch"></a></li>
+            <li><a href="#" class="comment"></a></li>
+            <li><a href="#" class="love"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="clean"></div>
+    <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+    <script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+    <!-- The Canvas to Blob plugin is included for image resizing functionality -->
+    <script src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+    <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
+    <script src="js/upload/vendor/jquery.ui.widget.js"></script>
+    <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+    <script src="js/upload/jquery.iframe-transport.js"></script>
+    <!-- The basic File Upload plugin -->
+    <script src="js/upload/jquery.fileupload.js"></script>
+    <!-- The File Upload processing plugin -->
+    <script src="js/upload/jquery.fileupload-process.js"></script>
+    <!-- The File Upload image preview & resize plugin -->
+    <script src="js/upload/jquery.fileupload-image.js"></script>
+    <!-- The File Upload audio preview plugin -->
+    <script src="js/upload/jquery.fileupload-audio.js"></script>
+    <!-- The File Upload video preview plugin -->
+    <script src="js/upload/jquery.fileupload-video.js"></script>
+    <!-- The File Upload validation plugin -->
+    <script src="js/upload/jquery.fileupload-validate.js"></script>
+    <!-- The File create charts -->
+    <script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
+    <!-- The File create share content social media -->
+    <script type="text/javascript" src="js/jquery.share.js"></script>
+    <!-- The Files widgest custom -->
+    <script type="text/javascript" src="js/widget2.js"></script>
+    <script type="text/javascript" src="js/widget3.js"></script>
+    <script type="text/javascript" src="js/translate.custom.js"></script>
+  </body>
+</html>
